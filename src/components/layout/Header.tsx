@@ -49,17 +49,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConfigurator }) => {
           <Logo size={32} />
         </a>
 
-        <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.06] text-[11px] font-mono text-zinc-300 shadow-inner">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan" />
-          </span>
-          <span className="tracking-tight text-zinc-300 font-medium">
-            Q3/Q4 Slots Open
-          </span>
-        </div>
-
-        <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-full border border-white/[0.05]">
+        <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-full border border-white/[0.05] md:ml-auto">
           {navLinks.map((link) => {
             const isActive = activeLink === link.name;
             return (
@@ -87,14 +77,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConfigurator }) => {
           })}
         </nav>
 
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3 md:ml-4">
           <button
             onClick={onOpenConfigurator}
             data-cursor="pointer"
             data-cursor-text="CALCULATE"
-            className="relative group overflow-hidden px-4 py-2 rounded-full text-xs font-semibold tracking-wide text-white transition-all duration-300 bg-gradient-to-r from-brand-purple via-brand-blue to-brand-cyan shadow-[0_0_20px_rgba(108,46,185,0.4)] hover:shadow-[0_0_30px_rgba(0,158,225,0.6)] hover:scale-[1.02] active:scale-[0.98]"
+            className="relative group overflow-hidden rounded-full bg-gradient-to-r from-brand-purple via-brand-blue to-brand-cyan p-px text-xs font-semibold tracking-wide text-white transition-all duration-300 shadow-[0_0_20px_rgba(108,46,185,0.25)] hover:shadow-[0_0_30px_rgba(0,158,225,0.5)] hover:scale-[1.02] active:scale-[0.98]"
           >
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center gap-2 rounded-full bg-[#0E111B] px-4 py-2 transition-colors duration-300 group-hover:bg-[#151B2A]">
               <Sparkles className="w-3.5 h-3.5 text-cyan-200 group-hover:rotate-12 transition-transform duration-300" />
               <span>Project Configurator</span>
             </span>
@@ -143,10 +133,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenConfigurator }) => {
                     setIsMobileMenuOpen(false);
                     onOpenConfigurator();
                   }}
-                  className="w-full py-3.5 rounded-full bg-gradient-to-r from-brand-purple via-brand-blue to-brand-cyan text-white font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(108,46,185,0.4)]"
+                  className="w-full rounded-full bg-gradient-to-r from-brand-purple via-brand-blue to-brand-cyan p-px text-white font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(108,46,185,0.25)]"
                 >
-                  <Sparkles className="w-4 h-4" />
-                  <span>Launch Project Configurator</span>
+                  <span className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0E111B] py-3.5">
+                    <Sparkles className="w-4 h-4" />
+                    <span>Launch Project Configurator</span>
+                  </span>
                 </button>
               </div>
             </div>
