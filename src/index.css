@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-obsidian: #07080E;
+  --brand-purple: #6C2EB9;
+  --brand-blue: #1E50C8;
+  --brand-cyan: #009EE1;
+  --brand-neon: #00FF88;
+}
+
+/* Custom Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07080E;
+}
+::-webkit-scrollbar-thumb {
+  background: #141824;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #009EE1;
+}
+
+/* Glassmorphic Utilities */
+.glass-panel {
+  background: rgba(14, 17, 27, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(20, 24, 36, 0.88);
+  border-color: rgba(0, 158, 225, 0.35);
+  box-shadow: 0 0 35px -10px rgba(108, 46, 185, 0.25), 0 0 20px -5px rgba(0, 158, 225, 0.2);
+}
+
+/* Kinetic Gradient Text with Brand Purple & Blue */
+.gradient-text-og {
+  background: linear-gradient(135deg, #FFFFFF 15%, #9D67EA 45%, #1E50C8 75%, #009EE1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-purple {
+  background: linear-gradient(135deg, #A855F7 0%, #6C2EB9 50%, #1E50C8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #FFFFFF 20%, #1E50C8 60%, #009EE1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-fire {
+  background: linear-gradient(135deg, #C084FC 0%, #3B82F6 50%, #00D4FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Background Ambient Glows */
+.ambient-glow-purple {
+  background: radial-gradient(circle at center, rgba(108, 46, 185, 0.22) 0%, transparent 70%);
+}
+
+.ambient-glow-blue {
+  background: radial-gradient(circle at center, rgba(30, 80, 200, 0.2) 0%, transparent 70%);
+}
+
+.ambient-glow-cyan {
+  background: radial-gradient(circle at center, rgba(0, 158, 225, 0.18) 0%, transparent 70%);
+}
+
+/* Hide default cursor on desktop for custom cursor */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+  a, button, [role="button"], input, select, textarea {
+    cursor: none;
+  }
+}
