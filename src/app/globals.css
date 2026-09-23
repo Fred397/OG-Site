@@ -39,6 +39,16 @@
     background: transparent;
   }
 
+  /* Hide Next.js Dev Indicator ("N" circle) */
+  nextjs-portal,
+  [data-nextjs-dev-indicator],
+  [data-nextjs-toast-wrapper] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
